@@ -12,6 +12,7 @@ import api from "../../services/api";
 
 import ProgressBar from "../../components/ProgressBar";
 import SelectMonth from "./../../components/selectMonth";
+import BackButton from "../../components/BackButton";
 
 ChartJS.register(...registerables);
 
@@ -45,6 +46,7 @@ export default function ProjectView() {
               <span className="text-[18px] text-[#212325] font-semibold">Project details</span>
             </div>
             <div className="flex items-center gap-2">
+              <BackButton to="/project" />
               <button
                 onClick={() => history.push(`/project/edit/${project?._id}`)}
                 className="border !border-[#0560FD] text-[#0560FD] py-[7px] px-[20px] bg-[#FFFFFF] rounded-[16px]">
