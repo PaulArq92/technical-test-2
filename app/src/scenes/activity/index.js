@@ -128,6 +128,14 @@ const Activities = ({ date, user, project }) => {
     return (activities.reduce((acc, a) => acc + a.total, 0) / 8).toFixed(2);
   };
 
+  const manageDetails = (i) => {
+    if (i === open) {
+      setOpen(null);
+    } else {
+      setOpen(i);
+    }
+  }
+
   return (
     <div className="flex flex-wrap py-3 gap-4 text-black">
       <div className="w-screen md:w-full p-2 md:!px-8">
@@ -176,7 +184,7 @@ const Activities = ({ date, user, project }) => {
                   {activities.map((e, i) => {
                     return (
                       <React.Fragment key={e.project}>
-                        <tr className="border-t border-b border-r border-[#E5EAEF]" key={`1-${e._id}`} onClick={() => setOpen(i)}>
+                        <tr className="border-t border-b border-r border-[#E5EAEF] cursor-pointer" key={`1-${e._id}`} onClick={() => manageDetails(i)}>
                           <th className="w-[100px] border-t border-b border-r text-[12px] font-bold text-[#212325] text-left">
                             <div className="flex flex-1 items-center justify-between gap-1 px-2">
                               <div className="flex flex-1 items-center justify-start gap-1">
