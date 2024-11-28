@@ -24,7 +24,7 @@ export default ({ value, active = true, onChange }) => {
         onChange={(e) => {
           e.preventDefault();
           const f = projects.find((f) => e.target.value === f.name);
-          onChange(f);
+          onChange(f ? f : "All Project");
         }}>
         <option disabled>Project</option>
         <option value={""}>All Project</option>
